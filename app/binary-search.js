@@ -47,44 +47,40 @@ Array.prototype.toOneThousand = function() {
  return myArray;
   
 };
-Array.prototype.search = function (A){
-        var length = this.length;
-        var top = length;
-        var down = 1;
-        var mid = down + Math.floor((top - down)/2);
-        var count = 0;
-
+Array.prototype.search = function (input) {
+      var length  = this.length;
+      var    max    = length;
+      var   min     = 0;
+      var   mid     = min + Math.floor((max - min)/2);
+      var  count   = 0;
         
-        while (this[mid -1] !== A) {
-          
-          if (A > this[mid - 1]){
-              down = mid + 1;            
-              count ++; 
-          }
-          else{
-              top = mid - 1;
-          }
-          mid = down + Math.ceil((top-down)/2);
-          
-          if (down === mid && this[mid -1] !== A){
-              return new holder (count, length, -1);
-          }
+        while (this[mid - 1] !== input) {
+            if (input > this[mid - 1]){
+                min  = mid + 1;
+                count++;
+            } else {
+                max = mid -1;
+            }
+            mid  = min + Math.ceil((max - min)/2);
 
-      }
-
-      if (A === this[length -1]) 
-        return {
-            length: length, index : (top -1), count : 0
-        };
-
-
-          
-          return new holder (count, length, (mid -1));
-          
+            
+            if (min === mid && this[mid - 1] !== input){
+                return new keep (count, length, -1);
+            } 
         }
+       
+        if (input === this[length - 1]) return {
+          length: length, index: (max - 1), count: 0
+        };
         
-  function holder (count,length,index){
-    this.count =count;
-    this.lenght = length;
+        return new keep (count, length, (mid - 1));
+};
+
+
+
+function keep(count,length,index){
+    this.count = count;
+    this.length = length;
     this.index = index;
-  }
+  
+}
