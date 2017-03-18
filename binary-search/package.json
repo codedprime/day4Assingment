@@ -1,0 +1,13 @@
+{
+  "name": "binary-search",
+  "version": "1.0.0",
+  "description": "Andela Exercise",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "jasmine tests/tests.js"
+  },
+  "author": "Obinna Okwuolisa",
+  "license": "ISC"
+}
