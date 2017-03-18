@@ -4,17 +4,17 @@ module.exports = {
             return 0;
         }
         if( input1.length > input2.length){
-          var min = input2
+            var min = input2
         }
         else{
-           min = input1
+            min = input1
         }
         
         if( input1.length > input2.length){
-          var max = input1
+            var max = input1
         }
         else{
-           max = input2;
+            max = input2;
         }
            
         
